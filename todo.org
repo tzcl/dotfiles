@@ -1,0 +1,178 @@
+#+TITLE: Laptop Setup
+#+startup: showall
+
+* Plan
+
+After setting up xps, don't rice until holidays.
+Set up same linux config on xps (find a different bg)
+- Fix emacs theme
+
+Check power management/optimisations. Also look into connecting to uni wifi
+
+* To finish setup
+
+** 12th of July
+
+Look at power management/optimisations.
+
+i3 set up so workspaces are consecutive: if 1 2 3 4 5 and 4 becomes empty, move 5 to be 4
+
+Seems to be a problem with services starting:
+- redshift
+- mega
+- synergy
+
+Ranger config
+Get latex working, good org mode note system
+Fix random pcie error (add thing to kernel)
+
+Fix up F4-F9 keys (play around with xbindkeys -n)
+- See setxkbmap 
+
+Fix up aur on laptop + dotfiles
+
+Set up dotfiles
+- Add all files
+- Script to install packages
+  - Look at packages and see main ones needed to install
+- What to do about system specific settings? (probs don't track)
+
+** DONE Polybar
+
+1. launcher script
+2. use system colours
+
+keyboard --> implement switch to chinese
+Need python2 to install from source
+
+** DONE Rofi 
+
+Dmenu alternative (?) or stick with dmenu
+
+** DONE Lock screen
+
+Make the lock work on lid shut
+See arch wiki on power management stuff (save battery)
+
+** Multimedia keys
+
+Use xmodmap to map F4-F9 to actually be F4-F9
+
+** Music (spotify)
+
+ncmpcpp, cava (see youtube)
+
+** Ranger
+
+set show_hidden true!!
+
+implement previews (see youtube)
+
+** Emacs
+
+Push settings
+
+Fix up xresources theme + init.el
+use the same as mark colour for isearch
+Fix the comment colour too
+Fix up theme to reload when wal is run
+- see: https://github.com/dylanaraps/pywal/pull/43
+
+light themes look really clean, but transparency doesn't look good
+- good bgs: mrk.jpg, ch.png (grayscale)
+
+good dark themes:
+- chd.jpg, mrk.jpg
+
+projectile/ggtags (navigate big projects easier --> good for notes!!)
+
+Distraction free mode (aesthetic!!)
+Set up margins so not so close to edge of window
+- can increase the size of fringe
+
+evil mode --> learn vim keybindings
+
+** MEGA
+
+sync files
+
+** Git repo for dotfiles
+
+Tracking dotfiles in ~, i3/compton configs
+
+Track setups for:
+- Ranger
+- Rofi?
+- Polybar
+- Music/spotify
+
+Track systemd (xautolock, suspend@ in /etc/)
+
+
+Not tracking system-specific settings (i.e., touchpad settings, driver settings)
+- dell computers are pretty similar, better track them
+
+Also will be only user on laptops, therefore there is no difference between user settings and system-wide settings. Easier to track/setup user only.
+
+*** Packages
+
+Use "pacman -Qqen > pkglist.txt" to generate a list of installed packages (excluding AUR).
+
+Use "pacman -S - < pkglist.txt" to install from file
+(pkglist tracks all packages installed through pacman)
+See arch wiki on setting up a hook to automatically track explicitly installed packages
+
+AUR packages:
+- acpilight
+- google-chrome
+- i3lock-color
+- polybar-git
+- pywal
+- spotify
+- megasync
+- xvkbd
+
+*** Installation
+
+1. Copy actual dotfiles (bash, X stuff)
+2. Install packages
+3. Copy configs
+4. Set up suspend/autolock + battery life stuff
+5. Misc
+   1. Enable services
+      1. redshift-gtk
+      2. suspend@toby
+      3. pulseaudio
+      4. Network manager
+   2. Add user to video group (for acpilight)
+
+Remember to change xautolock in i3 config
+
+Run synergys service with --user option, make sure to change settings to make synergy hide on startup
+
+** Languages
+
+Set up keyboard + indicator for keyboard (chinese)
+
+** Min/max
+
+Config: ranger, urxvt, emacs, git details
+
+i3: default workspaces, aesthetic window titles?, rounded corners
+- set up tiling mode nice
+- learn floating mode
+- configure window titles
+
+Compton: focus-exclude windows that should not be transparent
+
+Rofi: make a theme that centers rofi and is fullscreen/transparent
+
+urxvt --> enable copy/pasting, link following
+- vim keybindings
+
+lock screen: play around with i3lock+i3lock-color, i3lock-fancy isn't that good
+- suspend automatically after a certain amount of time, see DPMS/TLP
+- sleep 1 && xset dpms force off to turn off backlight
+
+see arch laptop recommendations (battery life, fingerprint)
+
