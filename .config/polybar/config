@@ -122,7 +122,7 @@ font-3 = "Font Awesome 5 Brands:pixelsize=10;2"
 ; unimplemented modules: battery
 modules-left = i3 music
 modules-center = date weather
-modules-right = volume brightness powermenu
+modules-right = volume brightness battery powermenu
 
 ; The separator will be inserted between the output of each module
 separator =

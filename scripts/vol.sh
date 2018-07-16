@@ -9,7 +9,7 @@ if (( $1 > 0 )); then
     if (( (( $vol + $1 )) <= $MAX_VOL )); then
 	change="+$1"
     else
-	change=""
+	change="+$(( $MAX_VOL - $vol ))"
     fi
 fi
 

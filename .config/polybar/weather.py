@@ -6,7 +6,6 @@ import urllib.parse
 import urllib.request
 import os
 
-
 def main():
     city = "Melbourne"
     api_key = "da1f3c25743ea88ae4cfa4b006e3eee0"
@@ -19,10 +18,10 @@ def main():
         desc = weather['weather'][0]['description'].capitalize()
         temp = int(float(weather['main']['temp']))
         temp = int((temp - 32) * (5 / 9))
-        return '{}°C'.format(temp)
+        return "{}°C".format(temp)
     except:
         return ''
 
 
 if __name__ == "__main__":
-	print(main())
+    print(main())
