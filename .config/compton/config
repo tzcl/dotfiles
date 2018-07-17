@@ -55,7 +55,8 @@ unredir-if-possible = false;	# Unredirect all windows if a full-screen opaque wi
 				# detected, to maximize performance for full-screen windows.
 focus-exclude = [
 "class_g *?= 'google-chrome'",
-"class_g *?= 'spotify'"];		# A list of conditions of windows that should always be considered
+"class_g *?= 'spotify'",
+"class_g *?= 'zathura'"];		# A list of conditions of windows that should always be considered
 				# focused.
 detect-transient = true;	# Use WM_TRANSIENT_FOR to group windows, and consider windows in
 				# the same group focused at the same time.
