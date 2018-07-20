@@ -273,7 +273,7 @@ exec_always --no-startup-id killall compton
 exec_always --no-startup-id dbus-launch compton -CG --config ~/.config/compton/config
 
 exec_always --no-startup-id killall nm-applet; nm-applet
-exec_always --no-startup-id systemctl --user start redshift-gtk
+exec_always --no-startup-id killall redshift-gtk; redshift-gtk -l -37.8:145.07
 exec_always --no-startup-id killall megasync; sleep 10; megasync
 exec_always --no-startup-id killall synergyc; killall synergy; synergy
 

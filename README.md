@@ -36,15 +36,13 @@ Also make sure to install AUR packages:
 3. Enable services, etc.
 
 Systemd stuff:
-  * redshift-gtk
-  * suspend@user
   * pulseaudio
   * networkmanager
   * fstrim.timer (for SSD)
   * thermald
   * tlp and tlp-sleep (mask systemd-rkfill.service and systemd-rfkill.socket)
   
-Add user to video group (for acpilight).
+Add user to the video group (for acpilight).
 
 Reconfigure grub to load intel-ucode (`grub-mkconfig -o /boot/grub/grub.cfg`).
 

@@ -1,3 +1,3 @@
 set statusbar-home-tilde true
 set guioptions ''
-set adjust-open "best-fit"
+set adjust-open "width"
