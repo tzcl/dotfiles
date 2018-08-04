@@ -246,3 +246,8 @@ keycode 252 =
 keycode 253 =
 keycode 254 =
 keycode 255 =
+
+remove Control = Control_R
+keycode 0x69 = Return
+keycode 0x24 = Control_R
+add Control = Control_R

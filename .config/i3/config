@@ -257,8 +257,9 @@ bindsym XF86AudioMute		exec --no-startup-id pactl set-sink-mute 0 toggle
 ### execs ###
 
 # services
-exec_always --no-startup-id setxkbmap -option caps:swapescape
+exec_always --no-startup-id setxkbmap -option ctrl:nocaps
 exec_always --no-startup-id xmodmap ~/.Xmodmap
+exec_always --no-startup-id killall xcape; xcape -t 300 -e "Control_L=Escape;Control_R=Return"
 
 exec_always --no-startup-id xset +dpms
 exec_always --no-startup-id xss-lock -- betterlockscreen -l dim &
@@ -277,4 +278,4 @@ exec_always --no-startup-id killall redshift-gtk; redshift-gtk -l -37.8:145.07
 exec_always --no-startup-id killall megasync; sleep 10; megasync
 exec_always --no-startup-id killall synergyc; killall synergy; synergy
 
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id ~/.config/polybar/launch.sh
