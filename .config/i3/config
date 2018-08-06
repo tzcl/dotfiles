@@ -184,14 +184,15 @@ bindsym $mod+shift+p exec i3lock-fancy
 for_window [class="^.*"] border pixel 5
 
 # Set Xresources colors
-set_from_resource $light	color2	#000000
-set_from_resource $dark		color1	#000000
+set_from_resource $light	color1	#000000
+set_from_resource $alt 		color0	#000000
+set_from_resource $dark		color2	#000000
 set_from_Resource $white	color8	#000000
 
 #                       BORDER		BACKGROUND	TEXT		INDICATOR	CHILD_BORDER
 client.focused		$light		$light		$light		$light		$light
 client.unfocused	$dark		$dark		$dark		$dark		$dark
-client.focused_inactive	$dark		$dark		$dark		$dark		$dark
+client.focused_inactive	$alt		$alt		$alt		$alt		$alt
 client.urgent		$dark		$dark		$dark		$dark		$dark
 client.background 	$dark
 
