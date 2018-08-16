@@ -129,16 +129,16 @@ bindsym $mod+Shift+9 move container to workspace $ws9; workspace 9
 # move between workspaces
 bindsym $mod+z workspace 1
 bindsym $mod+x exec --no-startup-id ~/.config/i3/i3helper.sh change -1
-bindsym $mod+c exec --no-startup-id ~/.config/i3/i3helper.sh change 1
-bindsym $mod+v workspace 9
-bindsym $mod+b workspace back_and_forth
+bindsym $mod+v exec --no-startup-id ~/.config/i3/i3helper.sh change 1
+bindsym $mod+b workspace 9
+bindsym $mod+c workspace back_and_forth
 
 # move focused container between workspaces
 bindsym $mod+Shift+z move container to workspace 1; workspace 1
 bindsym $mod+Shift+x exec --no-startup-id ~/.config/i3/i3helper.sh follow -1
-bindsym $mod+Shift+c exec --no-startup-id ~/.config/i3/i3helper.sh follow 1
-bindsym $mod+Shift+v move container to workspace 9; workspace 9
-bindsym $mod+Shift+b move container to workspace back_and_forth
+bindsym $mod+Shift+v exec --no-startup-id ~/.config/i3/i3helper.sh follow 1
+bindsym $mod+Shift+b move container to workspace 9; workspace 9
+bindsym $mod+Shift+c move container to workspace back_and_forth
 
 # collapse workspaces
 bindsym $mod+Mod1+c exec --no-startup-id ~/.config/i3/i3helper.sh rename
