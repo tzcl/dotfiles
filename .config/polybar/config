@@ -8,6 +8,7 @@ urgent = #f00
 
 [settings]
 screenchange-reload = true
+enable-ipc = true
 
 [global/wm]
 ; used for top aligned bars
@@ -313,7 +314,7 @@ exec = python ~/.config/polybar/mpris.py
 type = internal/date
 
 ; Seconds to sleep between updates
-interval = 5
+interval = 1
 
 ; See "http://en.cppreference.com/w/cpp/io/manip/put_time" for details on how to format the date string
 ; NOTE: if you want to use syntax tags here you need to use %%{...}

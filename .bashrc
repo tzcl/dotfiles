@@ -12,7 +12,7 @@ alias ls='ls --color=auto'
 alias ..='cd ..'
 alias ll='ls -al --color=auto'
 
-export PATH="${PATH}:${HOME}/.local/bin:${HOME}/scripts"
+export PATH="${PATH}:${HOME}/.local/bin:${HOME}/scripts:${HOME}/.cask/bin"
 export EDITOR=vim
 export VISUAL=ec.sh
 export PAGER=less
