@@ -13,11 +13,18 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-#font pango:monospace 8
+font pango:monospace 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango:Bitstream Vera Sans Mono 10
+# font pango:Roboto Mono 15
+# for_window [class=".*"] title_format "<span font='Roboto Mono 0'></span>"
+for_window [class="^.*"] title_format "   > %title"
+
+set $tile_border border pixel 5
+set $floating_border border normal 5
+
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -33,7 +40,7 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+w kill
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec dmenu_run
@@ -49,6 +56,10 @@ bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
+
+bindsym Mod1+Tab focus right
+bindsym Mod1+Shift+Tab focus left
+bindsym $mod+m move position center
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -69,18 +80,19 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # toggle split
-bindsym $mod+t split toggle 
+# bindsym $mod+t split toggle 
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+# bindsym $mod+s layout stacking
+# bindsym $mod+Shift+w layout tabbed
+# bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+# bindsym $mod+s floating toggle
+bindsym $mod+s "mark --add f; [con_mark=t] floating enable, $floating_border, mark --add --toggle f; [con_mark=f] floating disable, $tile_border; mark --add --toggle t; [class=\"Emacs|Zathura|Google-chrome\"] $tile_border; [title=\"ranger\"] $tile_border;"
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -181,17 +193,19 @@ bindsym $mod+shift+p exec i3lock-fancy
 
 ### i3-gaps stuff ###
 
-for_window [class="^.*"] border pixel 5
+# border
+for_window [class="^.*"] $floating_border
 
 # Set Xresources colors
 set_from_resource $light	color1	#000000
 set_from_resource $alt 		color6	#000000
 set_from_resource $dark		color7	#000000
+set 		  $white		#ffffff
 
 #                       BORDER		BACKGROUND	TEXT		INDICATOR	CHILD_BORDER
 client.focused		$light		$light		$light		$light		$light
-client.unfocused	$dark		$dark		$dark		$dark		$dark
-client.focused_inactive	$alt		$alt		$alt		$alt		$alt
+client.unfocused	$alt		$alt		$alt		$alt		$alt
+client.focused_inactive	$dark		$dark		$dark		$dark		$dark
 client.urgent		$dark		$dark		$dark		$dark		$dark
 client.background 	$dark
 
@@ -236,6 +250,15 @@ mode "$mode_gaps_outer" {
      bindsym Return mode "default"
      bindsym Escape mode "default"
 }
+
+### float windows ###
+for_window [class = ".*"] floating enable
+for_window [title = ".*"] floating enable
+
+# except 
+for_window [class = "Emacs|Zathura"] $tile_border, floating disable
+for_window [class = "Google-chrome"] $tile_border
+for_window [title = "ranger"] $tile_border, floating disable
 
 ### programs ###
 bindsym $mod+u exec --no-startup-id ec.sh
