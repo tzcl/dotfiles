@@ -23,8 +23,7 @@ alpha-step = 0.06;			# XRender backend: Step size for alpha pictures. Increasing
 blur-background-fixed = false;		# Do not let blur radius adjust based on window opacity.
 blur-background-exclude = [ "window_type = 'dock'", "window_type = 'desktop'" ];
 					# Exclude conditions for background blur.
-# opacity-rule = ["90:class_g = 'URxvt'"]  Make urxvt transparent
-opacity-rule = ["90:class_g *?= 'emacs'"];
+opacity-rule = ["90:class_g = 'URxvt'", "90:class_g *?= 'emacs'"];
 
 # Fading
 fading = true;			# Fade windows during opacity changes.
