@@ -17,10 +17,10 @@ font pango:monospace 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:Bitstream Vera Sans Mono 10
-# font pango:Roboto Mono 15
-# for_window [class=".*"] title_format "<span font='Roboto Mono 0'></span>"
-for_window [class="^.*"] title_format "   > %title"
+# font pango:Bitstream Vera Sans Mono 10
+font pango:Roboto Mono 20
+for_window [class=".*"] title_format "<span font='Roboto Mono 0'></span>"
+# for_window [class="^.*"] title_format "   > %title"
 
 set $tile_border border pixel 5
 set $floating_border border normal 0
