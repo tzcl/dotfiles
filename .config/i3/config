@@ -23,8 +23,7 @@ font pango:Bitstream Vera Sans Mono 10
 for_window [class="^.*"] title_format "   > %title"
 
 set $tile_border border pixel 5
-set $floating_border border normal 5
-
+set $floating_border border normal 0
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -92,7 +91,7 @@ bindsym $mod+f fullscreen toggle
 
 # toggle tiling / floating
 # bindsym $mod+s floating toggle
-bindsym $mod+s "mark --add f; [con_mark=t] floating enable, $floating_border, mark --add --toggle f; [con_mark=f] floating disable, $tile_border; mark --add --toggle t; [class=\"Emacs|Zathura|Google-chrome\"] $tile_border; [title=\"ranger\"] $tile_border;"
+bindsym $mod+s "mark --add f; [con_mark=t] floating enable, $floating_border, mark --add --toggle f, [class=\"Google-chrome\"] resize set 1280 840; [con_mark=f] floating disable, $tile_border; mark --add --toggle t; [class=\"Emacs|Zathura|Google-chrome\"] $tile_border; [title=\"ranger\"] $tile_border;"
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -257,7 +256,7 @@ for_window [title = ".*"] floating enable
 
 # except 
 for_window [class = "Emacs|Zathura"] $tile_border, floating disable
-for_window [class = "Google-chrome"] $tile_border
+for_window [class = "Google-chrome"] $tile_border, resize set 1280 840 
 for_window [title = "ranger"] $tile_border, floating disable
 
 ### programs ###
