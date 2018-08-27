@@ -23,7 +23,7 @@ alpha-step = 0.06;			# XRender backend: Step size for alpha pictures. Increasing
 blur-background-fixed = false;		# Do not let blur radius adjust based on window opacity.
 blur-background-exclude = [ "window_type = 'dock'", "window_type = 'desktop'" ];
 					# Exclude conditions for background blur.
-opacity-rule = ["95:class_g = 'URxvt'", "90:class_g *?= 'emacs'"];
+opacity-rule = ["90:class_g = 'URxvt'", "90:class_g *?= 'emacs'"];
 
 # Fading
 fading = true;			# Fade windows during opacity changes.
@@ -55,7 +55,8 @@ unredir-if-possible = false;	# Unredirect all windows if a full-screen opaque wi
 focus-exclude = [
 "class_g *?= 'google-chrome'",
 "class_g *?= 'spotify'",
-"class_g *?= 'zathura'"];		# A list of conditions of windows that should always be considered
+"class_g *?= 'zathura'",
+"class_g *?= 'sxiv'"];		# A list of conditions of windows that should always be considered
 				# focused.
 detect-transient = true;	# Use WM_TRANSIENT_FOR to group windows, and consider windows in
 				# the same group focused at the same time.
