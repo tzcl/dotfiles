@@ -56,7 +56,9 @@ focus-exclude = [
 "class_g *?= 'google-chrome'",
 "class_g *?= 'spotify'",
 "class_g *?= 'zathura'",
-"class_g *?= 'sxiv'"];		# A list of conditions of windows that should always be considered
+"class_g *?= 'sxiv'",
+"class_g *?= 'eclipse'",
+"class_g *?= 'OSBot 2.5.24'"];		# A list of conditions of windows that should always be considered
 				# focused.
 detect-transient = true;	# Use WM_TRANSIENT_FOR to group windows, and consider windows in
 				# the same group focused at the same time.
