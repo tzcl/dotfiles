@@ -300,7 +300,7 @@ exec_always --no-startup-id wal -R -a 90
 exec_always --no-startup-id emacs --fg-daemon
 
 exec_always --no-startup-id killall compton
-exec_always --no-startup-id dbus-launch compton -CG --config ~/.config/compton/config
+exec_always --no-startup-id dbus-launch compton -CG -m 1.0 --config ~/.config/compton/config
 
 exec_always --no-startup-id killall nm-applet; nm-applet
 exec_always --no-startup-id killall redshift-gtk; redshift-gtk -l -37.8:145.07
