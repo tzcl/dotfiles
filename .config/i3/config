@@ -47,6 +47,7 @@ bindsym $mod+w kill
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
 # start rofi
 bindsym $mod+d exec rofi -show run
 
@@ -263,6 +264,7 @@ for_window [title = "ranger"] $tile_border, floating disable
 bindsym $mod+u exec --no-startup-id ec.sh
 bindsym $mod+i exec --no-startup-id urxvt -e ranger
 bindsym $mod+o exec --no-startup-id google-chrome-stable
+bindsym $mod+g exec --no-startup-id flameshot gui -p /home/toby/mega/misc/img -d 500
 
 ### keybindings ###
 
@@ -303,6 +305,14 @@ exec_always --no-startup-id dbus-launch compton -CG --config ~/.config/compton/c
 exec_always --no-startup-id killall nm-applet; nm-applet
 exec_always --no-startup-id killall redshift-gtk; redshift-gtk -l -37.8:145.07
 exec_always --no-startup-id killall megasync; sleep 10; megasync
-exec_always --no-startup-id killall synergyc; killall synergy; synergy
+exec_always --no-startup-id killall udiskie; udiskie -Nt2
 
 exec_always --no-startup-id ~/.config/polybar/launch.sh
+
+# T420
+exec_always --no-startup-id test "$(hostname)" = "T420" && { killall synergy; synergy; }
+exec_always --no-startup-id test "$(hostname)" = "T420" && { xset s off && xset -dpms; }
+
+# XPS
+exec_always --no-startup-id test "$(hostname)" = "xps" && syc.sh
+
