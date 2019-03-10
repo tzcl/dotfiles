@@ -314,7 +314,8 @@ interval = 1
 
 label = " %output% "
 
-exec = python ~/.config/polybar/mpris.py
+; disable for now
+; exec = python ~/.config/polybar/mpris.py
 
 [module/date]
 type = internal/date
