@@ -122,7 +122,7 @@ font-4 = "WenQuanYi Zen Hei:pixelsize=10;2"
 ;   modules-center = xwindow xbacklight
 ;   modules-right = ipc clock
 ; unimplemented modules: battery
-modules-left = i3 music
+modules-left = i3 
 modules-center = date weather
 modules-right = volume brightness battery powermenu
 
@@ -308,6 +308,7 @@ label-urgent-foreground = #000000
 label-urgent-background = ${colours.background-alt}
 label-urgent-padding = 4
 
+; disabled!
 [module/music]
 type = custom/script
 interval = 1
