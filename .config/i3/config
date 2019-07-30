@@ -259,9 +259,11 @@ for_window [title = ".*"] floating enable
 for_window [class = "Emacs|Zathura"] $tile_border, floating disable
 for_window [class = "Google-chrome"] $tile_border, resize set 1280 840 
 for_window [title = "ranger"] $tile_border, floating disable
+for_window [class = "Emacs" title = "capture"] floating enable, resize set 640 480
 
 ### programs ###
 bindsym $mod+u exec --no-startup-id ec.sh
+bindsym $mod+Shift+d exec --no-startup-id emacsclient -ca '' -F '(quote (name . "capture"))' -e '(activate-capture-frame)'
 bindsym $mod+i exec --no-startup-id urxvt -e ranger
 bindsym $mod+o exec --no-startup-id google-chrome-stable
 bindsym $mod+g exec --no-startup-id flameshot gui -p /home/toby/mega/misc/img -d 500
