@@ -11,6 +11,7 @@ PS1='\u \w > '
 alias ls='ls --color=auto'
 alias ..='cd ..'
 alias ll='ls -al --color=auto'
+alias ag='ag --path-to-ignore ~/.ignore'
 
 export PATH="${PATH}:${HOME}/.local/bin:${HOME}/scripts:${HOME}/.cask/bin"
 export EDITOR=vim
