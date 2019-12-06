@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 MAX_VOL=100
 vol=$(amixer sget Master | grep 'Right:' | awk -F'[][]' '{ print $2 }' | awk -F'%' '{ print $1 }')
