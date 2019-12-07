@@ -306,7 +306,7 @@ exec_always --no-startup-id dbus-launch compton -CG -m 1.0 --config ~/.config/co
 
 exec_always --no-startup-id killall nm-applet; nm-applet
 exec_always --no-startup-id killall redshift-gtk; redshift-gtk -l -37.8:145.07
-exec_always --no-startup-id killall google-drive-ocamlfuse; google-drive-ocamlfuse ~/gdrive
+exec_always --no-startup-id killall google-drive-ocamlfuse; sleep 10; google-drive-ocamlfuse ~/gdrive
 exec_always --no-startup-id killall udiskie; udiskie -Nt2
 
 exec_always --no-startup-id ~/.config/polybar/launch.sh
