@@ -317,4 +317,3 @@ exec_always --no-startup-id test "$(hostname)" = "T420" && { xset s off && xset 
 
 # XPS
 exec_always --no-startup-id test "$(hostname)" = "xps" && syc.sh
-

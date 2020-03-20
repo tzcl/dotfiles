@@ -1,6 +1,6 @@
 #!/bin/sh
 
-synergyc -f --debug INFO 192.168.0.31:24800 | while read line; do
+synergyc -f --debug INFO 192.168.0.14:24800 | while read line; do
   if echo $line | grep entering; then
     echo mouse is back
     killall xcape
