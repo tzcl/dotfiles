@@ -41,13 +41,6 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+w kill
 
-# start dmenu (a program launcher)
-# bindsym $mod+d exec dmenu_run
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-
 # start rofi
 bindsym $mod+d exec rofi -show run
 
@@ -79,20 +72,12 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# toggle split
-# bindsym $mod+t split toggle 
-
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
-# change container layout (stacked, tabbed, toggle split)
-# bindsym $mod+s layout stacking
-# bindsym $mod+Shift+w layout tabbed
-# bindsym $mod+e layout toggle split
-
 # toggle tiling / floating
 # bindsym $mod+s floating toggle
-bindsym $mod+s "mark --add f; [con_mark=t] floating enable, $floating_border, mark --add --toggle f, [class=\"Google-chrome\"] resize set 1280 840; [con_mark=f] floating disable, $tile_border; mark --add --toggle t; [class=\"Emacs|Zathura|Google-chrome\"] $tile_border; [title=\"ranger\"] $tile_border;"
+bindsym $mod+s "mark --add f; [con_mark=t] floating enable, $floating_border, mark --add --toggle f, [class=\"Google-chrome\"] resize set 1280 840; [con_mark=f] floating disable, $tile_border; mark --add --toggle t; [class=\"Zathura\"] $tile_border; [title=\"ranger\"] $tile_border;"
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -189,8 +174,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bindsym $mod+shift+p exec i3lock-fancy 
-
 ### i3-gaps stuff ###
 
 # border
@@ -259,11 +242,9 @@ for_window [title = ".*"] floating enable
 for_window [class = "Emacs|Zathura"] $tile_border, floating disable
 for_window [class = "Google-chrome"] $tile_border, resize set 1280 840 
 for_window [title = "ranger"] $tile_border, floating disable
-for_window [class = "Emacs" title = "capture"] floating enable, resize set 640 480
 
 ### programs ###
 bindsym $mod+u exec --no-startup-id ec.sh
-bindsym $mod+Shift+d exec --no-startup-id emacsclient -ca '' -F '(quote (name . "capture"))' -e '(activate-capture-frame)'
 bindsym $mod+i exec --no-startup-id urxvt -e ranger
 bindsym $mod+o exec --no-startup-id google-chrome-stable
 bindsym $mod+g exec --no-startup-id flameshot gui -p /home/toby/gdrive/misc/img -d 500
@@ -289,28 +270,23 @@ bindsym XF86AudioMute		exec --no-startup-id pactl set-sink-mute 0 toggle
 ### execs ###
 
 # services
-exec_always --no-startup-id xmodmap ~/.Xmodmap
 exec_always --no-startup-id killall xcape; xcape -t 300 -e "Control_L=Escape;Control_R=Return"
 
 exec_always --no-startup-id xset +dpms
 exec_always --no-startup-id xss-lock -- betterlockscreen -l dim &
 
-exec_always --no-startup-id fcitx &
-
 # programs
 exec_always --no-startup-id wal -R -a 90
 exec_always --no-startup-id emacs --fg-daemon
 
-exec_always --no-startup-id killall compton
-exec_always --no-startup-id dbus-launch compton -CG -m 1.0 --config ~/.config/compton/config
+exec_always --no-startup-id killall picom; picom -b --config ~/.config/picom/picom.conf
 
 exec_always --no-startup-id killall nm-applet; nm-applet
 exec_always --no-startup-id killall redshift-gtk; redshift-gtk -l -37.8:145.07
-exec_always --no-startup-id killall google-drive-ocamlfuse; sleep 10; google-drive-ocamlfuse ~/gdrive
-exec_always --no-startup-id killall udiskie; udiskie -Nt2
+exec_always --no-startup-id killall udiskie; udiskie -Nt
 exec_always --no-startup-id killall dunst; dunst > /dev/null 2>&1 &
 
-exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id sleep 1; ~/.config/polybar/launch.sh
 
 # T420
 exec_always --no-startup-id test "$(hostname)" = "T420" && { killall synergy; synergy; }
