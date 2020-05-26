@@ -21,33 +21,37 @@ get_workspace () {
 
 bound () {
     if (( $1 > 9 )); then
-	echo 1
+	echo "1"
+    elif (( $1 < 1 )); then
+	echo "9"
+    else
+    echo "$1"
     fi
-    if (( $1 < 1 )); then
-	echo 9
-    fi
-    echo $1
 }
 
 change () {
-    i3-msg workspace $1
+    i3-msg workspace "$1"
 }
 
 move () {
-    i3-msg move container to workspace $1 
+    i3-msg move container to workspace "$1"
+}
+
+follow () {
+    i3-msg "move container to workspace $1; workspace $1"
 }
 
 result=$( bound $(( $(get_workspace) + $2 )) )
 echo "Result: $result"
 
 if [ "$1" = "move" ]; then
-    move $result
+    move "$result"
 fi
 if [ "$1" = "change" ]; then
-    change $result
+    change "$result"
 fi
 if [ "$1" = "follow" ]; then
-    move $result; change $result
+    follow "$result"
 fi
 if [ "$1" = "rename" ]; then
     rename_workspaces
