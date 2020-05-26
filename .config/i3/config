@@ -79,6 +79,7 @@ bindsym $mod+f fullscreen toggle
 # bindsym $mod+s floating toggle
 bindsym $mod+s "mark --add f; [con_mark=t] floating enable, $floating_border, mark --add --toggle f, [con_mark=f] floating disable, $tile_border; mark --add --toggle t; [class=\"Zathura\"] $tile_border; [title=\"ranger\"] $tile_border;"
 
+
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
@@ -135,7 +136,7 @@ bindsym $mod+Shift+z move container to workspace $ws1; workspace $ws1
 bindsym $mod+Shift+x exec --no-startup-id ~/.config/i3/i3helper.sh follow -1
 bindsym $mod+Shift+v exec --no-startup-id ~/.config/i3/i3helper.sh follow 1
 bindsym $mod+Shift+b move container to workspace $ws9; workspace $ws9
-bindsym $mod+Shift+c move container to workspace back_and_forth
+bindsym $mod+Shift+c move container to workspace back_and_forth; workspace back_and_forth
 
 # collapse workspaces
 bindsym $mod+Mod1+c exec --no-startup-id ~/.config/i3/i3helper.sh rename
