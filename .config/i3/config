@@ -77,7 +77,7 @@ bindsym $mod+f fullscreen toggle
 
 # toggle tiling / floating
 # bindsym $mod+s floating toggle
-bindsym $mod+s "mark --add f; [con_mark=t] floating enable, $floating_border, mark --add --toggle f, [con_mark=f] floating disable, $tile_border; mark --add --toggle t; [class=\"Zathura\"] $tile_border; [title=\"ranger\"] $tile_border;"
+bindsym $mod+s "mark --add f; [con_mark=t] floating enable, $floating_border, mark --add --toggle f, [con_mark=f] floating disable, $tile_border; mark --add --toggle t; [class=\"Zathura\"] $tile_border"
 
 
 # change focus between tiling / floating windows
@@ -240,9 +240,7 @@ for_window [class = ".*"] floating enable
 for_window [title = ".*"] floating enable
 
 # except 
-for_window [class = "Emacs|Zathura"] $tile_border, floating disable
-for_window [class = "Google-chrome"] $tile_border, resize set 1280 840 
-for_window [title = "ranger"] $tile_border, floating disable
+for_window [class = "Emacs|Zathura|Google-chrome"] $tile_border, floating disable
 
 ### programs ###
 bindsym $mod+u exec --no-startup-id ec.sh
@@ -290,8 +288,8 @@ exec_always --no-startup-id killall dunst; dunst > /dev/null 2>&1 &
 exec_always --no-startup-id sleep 5; ~/.config/polybar/launch.sh
 
 # applications
-exec_always --no-startup-id i3-msg "workspace 1; exec google-chrome-stable"
 exec_always --no-startup-id i3-msg "workspace 2; exec emacs"
+exec_always --no-startup-id i3-msg "workspace 1; exec google-chrome-stable"
 
 # T420
 exec_always --no-startup-id test "$(hostname)" = "T420" && { killall synergy; synergy; }
