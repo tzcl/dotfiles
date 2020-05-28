@@ -289,6 +289,10 @@ exec_always --no-startup-id killall dunst; dunst > /dev/null 2>&1 &
 
 exec_always --no-startup-id sleep 5; ~/.config/polybar/launch.sh
 
+# applications
+exec_always --no-startup-id i3-msg "workspace 1; exec google-chrome-stable"
+exec_always --no-startup-id i3-msg "workspace 2; exec emacs"
+
 # T420
 exec_always --no-startup-id test "$(hostname)" = "T420" && { killall synergy; synergy; }
 exec_always --no-startup-id test "$(hostname)" = "T420" && { xset s off && xset -dpms; }
