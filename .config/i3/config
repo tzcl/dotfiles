@@ -242,11 +242,15 @@ for_window [title = ".*"] floating enable
 # except 
 for_window [class = "Emacs|Zathura|Google-chrome"] $tile_border, floating disable
 
+# except except
+for_window [title = "doom-capture"] $floating_border, floating enable
+
 ### programs ###
 bindsym $mod+u exec --no-startup-id ec.sh
 bindsym $mod+i exec --no-startup-id urxvt -e ranger
 bindsym $mod+o exec --no-startup-id google-chrome-stable
 bindsym $mod+g exec --no-startup-id flameshot gui -p /home/toby/gdrive/misc/img -d 500
+bindsym $mod+Shift+d exec emacsclient -ne "(+org-capture/open-frame)"
 
 ### keybindings ###
 
