@@ -251,7 +251,7 @@ bindsym $mod+u exec --no-startup-id ec.sh
 bindsym $mod+i exec --no-startup-id urxvt -e ranger
 bindsym $mod+o exec --no-startup-id google-chrome-stable
 bindsym $mod+g exec --no-startup-id flameshot gui -p /home/toby/gdrive/misc/img -d 500
-bindsym $mod+Shift+d exec emacsclient -ne "(+org-capture/open-frame)"
+bindsym $mod+Shift+d exec org-capture
 
 ### keybindings ###
 
@@ -293,7 +293,7 @@ exec_always --no-startup-id killall dunst; dunst > /dev/null 2>&1 &
 exec_always --no-startup-id sleep 5; ~/.config/polybar/launch.sh
 
 # applications
-exec_always --no-startup-id i3-msg "workspace 2; exec emacs"; sleep 2
+exec_always --no-startup-id i3-msg "workspace 2; exec emacs"
 exec_always --no-startup-id i3-msg "workspace 1; exec google-chrome-stable"
 
 # T420
