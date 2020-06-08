@@ -289,9 +289,11 @@ exec_always --no-startup-id killall nm-applet; nm-applet
 exec_always --no-startup-id killall redshift-gtk; redshift-gtk -l -37.8:145.07
 exec_always --no-startup-id killall udiskie; udiskie -Nt
 exec_always --no-startup-id killall dunst; dunst > /dev/null 2>&1 &
-exec_always --no-startup-id killall megasync; megasync
 
 exec_always --no-startup-id sleep 5; ~/.config/polybar/launch.sh
+
+# start mega after polybar
+exec --no-startup-id sleep 8; megasync
 
 # applications
 exec_always --no-startup-id i3-msg "workspace 2; exec emacs"
