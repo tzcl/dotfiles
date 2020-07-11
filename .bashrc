@@ -22,3 +22,5 @@ export PATH=$GOPATH:$GOPATH/bin:$PATH
 export EDITOR=vim
 export VISUAL=ec.sh
 export PAGER=less
+
+export GPG_TTY=$(tty)
