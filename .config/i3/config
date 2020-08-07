@@ -274,7 +274,7 @@ bindsym XF86AudioMute		exec --no-startup-id pactl set-sink-mute 0 toggle
 ### execs ###
 
 # services
-exec_always --no-startup-id killall xcape; xcape -t 300 -e "Control_L=Escape;Control_R=Return"
+# exec_always --no-startup-id killall xcape; xcape -t 300 -e "Control_L=Escape;Control_R=Return"
 
 exec_always --no-startup-id xset +dpms
 exec_always --no-startup-id xss-lock -- betterlockscreen -l dim &
