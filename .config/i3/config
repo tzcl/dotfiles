@@ -247,7 +247,7 @@ for_window [class = "Google-chrome"] resize set 1080 720
 for_window [title = "doom-capture"] $floating_border, floating enable
 
 ### programs ###
-bindsym $mod+u exec --no-startup-id ec.sh
+bindsym $mod+u exec --no-startup-id emacs
 bindsym $mod+i exec --no-startup-id urxvt -e ranger
 bindsym $mod+o exec --no-startup-id google-chrome-stable
 bindsym $mod+g exec --no-startup-id flameshot gui -p /home/toby/gdrive/misc/img -d 500
