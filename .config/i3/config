@@ -280,8 +280,6 @@ exec_always --no-startup-id setxkbmap -layout us
 exec_always --no-startup-id xset +dpms
 exec_always --no-startup-id xss-lock -- betterlockscreen -l dim &
 
-exec_always --no-startup-id crd --start
-
 # programs
 exec_always --no-startup-id wal -R -a 90
 exec_always --no-startup-id emacs --fg-daemon
@@ -302,6 +300,8 @@ exec --no-startup-id sleep 8; megasync
 # exec_always --no-startup-id i3-msg "workspace 2; exec emacs"
 # exec_always --no-startup-id i3-msg "workspace 1; exec google-chrome-stable"
 exec_always --no-startup-id emacs
+
+exec_always --no-startup-id crd --start
 
 # T420
 exec_always --no-startup-id test "$(hostname)" = "T420" && { killall synergy; synergy; }
