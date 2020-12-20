@@ -24,3 +24,5 @@ export VISUAL=ec.sh
 export PAGER=less
 
 export GPG_TTY=$(tty)
+
+eval $(keychain --eval --agents ssh id_ed25519)
