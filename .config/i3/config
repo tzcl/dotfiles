@@ -304,7 +304,7 @@ exec_always --no-startup-id emacs
 exec_always --no-startup-id crd --start
 
 # T420
-exec_always --no-startup-id test "$(hostname)" = "T420" && { killall synergy; synergy; }
+# exec_always --no-startup-id test "$(hostname)" = "T420" && { killall synergy; synergy; }
 exec_always --no-startup-id test "$(hostname)" = "T420" && { xset s off && xset -dpms; }
 
 # XPS
