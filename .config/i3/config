@@ -35,6 +35,9 @@ set $floating_border border normal 0
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# Disable mouse changing focus
+focus_follows_mouse no
+
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
