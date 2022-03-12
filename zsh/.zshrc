@@ -20,7 +20,7 @@ bindkey "^[[1;5D" backward-word
 
 # Complete lowercase to uppercase
 autoload -Uz compinit && compinit
-zstyle ':completion:*' matcher-list 'm:{a-z}={a-zA-Z}'
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # History
 HISTSIZE=5000
