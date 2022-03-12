@@ -18,5 +18,22 @@ alias ll="ls -alF"
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
+# Complete lowercase to uppercase
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={a-zA-Z}'
+
+# History
+HISTSIZE=5000
+HISTFILE=~/.zsh_history
+SAVEHIST=5000
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt incappendhistory
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
