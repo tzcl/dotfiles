@@ -21,7 +21,7 @@ echo "Installing packages"
 sudo add-apt-repository -y ppa:git-core/ppa
 
 # Get Syncthing
-curl -s -o /usr/share/keyrings/syncthing-archive-keyring.gpg https://syncthing.net/release-key.gpg
+sudo curl -s -o /usr/share/keyrings/syncthing-archive-keyring.gpg https://syncthing.net/release-key.gpg
 echo "deb [signed-by=/usr/share/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing stable" | sudo tee /etc/apt/sources.list.d/syncthing.list
 
 # Get ripgrep
@@ -29,20 +29,12 @@ curl -o ~/downloads/ripgrep.deb -L https://github.com/BurntSushi/ripgrep/release
 sudo dpkg -i ~/downloads/ripgrep.deb
 
 sudo apt update
-sudo apt install -y git stow syncthing keychain fd-find zsh
+sudo apt install -y git stow syncthing keychain fd-find
 sudo apt upgrade -y
 
 # Install fd
 if [[ ! -f /usr/bin/fd ]]; then
     mv /usr/bin/fdfind /usr/bin/fd
-fi
-
-# Change shell to zsh
-sudo chsh -s $(which zsh) $(whoami)
-
-# Symlink to MEGA
-if [[ ! -L ~/mega ]]; then
-    ln -s /mnt/c/Users/Toby/Documents/MEGAsync ~/mega
 fi
 
 # Install fonts
@@ -57,7 +49,7 @@ echo "Installing zsh packages"
 mkdir -p ~/.zsh
 clone () {
     if [[ ! -d $2 ]]; then
-        git clone $1
+        git clone $1 $2
     fi
 }
 
@@ -73,7 +65,7 @@ if [[ ! -d ~/.doom.d ]]; then
     ~/.emacs.d/bin/doom install
 
     rm -rf ~/.doom.d
-    git clone https://github.com/tzcl/dotdoom.git
+    git clone https://github.com/tzcl/dotdoom.git ~/.doom.d
     ~/.emacs.d/bin/doom sync
 fi
 
