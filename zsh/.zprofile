@@ -1,6 +1,6 @@
 # Start keychain
 /usr/bin/keychain -q --nogui $HOME/.ssh/id_ed25519
-source $HOME/.keychain/$HOST-sh
+source $HOME/.keychain/$HOST-sh 2>/dev/null
 
 # Start Syncthing
 if ! /usr/bin/pgrep syncthing > /dev/null; then
