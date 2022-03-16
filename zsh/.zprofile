@@ -4,5 +4,5 @@ source $HOME/.keychain/$HOST-sh
 
 # Start Syncthing
 if ! /usr/bin/pgrep syncthing > /dev/null; then
-	(syncthing --no-browser > /dev/null 2>&1) &> /dev/null
+	(nohup syncthing > /dev/null 2>&1 &)
 fi
