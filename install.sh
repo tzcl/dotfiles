@@ -28,8 +28,12 @@ echo "deb [signed-by=/usr/share/keyrings/syncthing-archive-keyring.gpg] https://
 curl -o ~/downloads/ripgrep.deb -L https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_13.0.0_amd64.deb
 sudo dpkg -i ~/downloads/ripgrep.deb
 
+# Get exa
+curl -o ~/downloads/exa.zip -L https://github.com/ogham/exa/releases/download/v0.10.0/exa-linux-x86_64-v0.10.0.zip
+sudo unzip -q ~/downloads/exa.zip bin/exa -d /usr/local
+
 sudo apt update
-sudo apt install -y git stow syncthing keychain fd-find
+sudo apt install -y git stow syncthing keychain fd-find bat fzf tldr
 sudo apt upgrade -y
 
 # Install fd

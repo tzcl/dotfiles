@@ -11,8 +11,9 @@ source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Aliases
-alias ls="ls --color=auto"
-alias ll="ls -alF"
+alias ls="exa"
+alias cat="batcat"
+alias fzf="fzf --preview 'batcat --color=always --style=numbers --line-range=:500 {}'"
 
 # Keybindings
 bindkey "^[[1;5C" forward-word
