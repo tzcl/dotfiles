@@ -22,6 +22,7 @@ bindkey "^[[1;5D" backward-word
 # Complete lowercase to uppercase
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+eval "$(zoxide init zsh)"
 
 # History
 HISTSIZE=5000
@@ -38,3 +39,9 @@ setopt hist_find_no_dups
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
