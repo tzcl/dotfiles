@@ -41,3 +41,9 @@ source ~/projects/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/projects/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/lawt3/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/lawt3/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/lawt3/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/lawt3/google-cloud-sdk/completion.zsh.inc'; fi
