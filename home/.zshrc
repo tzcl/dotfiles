@@ -13,7 +13,7 @@ source ~/projects/powerlevel10k/powerlevel10k.zsh-theme
 # Aliases
 alias ls="exa"
 alias cat="bat"
-alias fzf="fzf --preview 'batcat --color=always --style=numbers --line-range=:500 {}'"
+alias fzf="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
 
 # Keybindings
 bindkey "^[[1;5C" forward-word
