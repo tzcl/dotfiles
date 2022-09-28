@@ -1,0 +1,9 @@
+let mapleader=" "
+
+""" Idea plugins
+set easymotion
+set sneak
+
+""" Vim plugins
+Plug 'tpope/vim-surround'
+set surround
