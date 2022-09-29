@@ -5,7 +5,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-source ~/projects/powerlevel10k/powerlevel10k.zsh-theme
+source ~/github.com/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -37,8 +37,8 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
-source ~/projects/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/projects/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/github.com/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/github.com/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
