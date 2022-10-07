@@ -15,6 +15,9 @@ alias ls="exa"
 alias cat="bat"
 alias fzf="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
 
+alias gc="git add . && git commit"
+alias gca="git add . && git commit --amend"
+
 # Keybindings
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
