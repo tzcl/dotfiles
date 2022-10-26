@@ -29,7 +29,9 @@
 ;; refresh your font settings. If Emacs still can't find your font, it likely
 ;; wasn't installed correctly. Font issues are rarely Doom issues!
 (setq doom-font (font-spec :family "Fira Code" :size 14)
-      doom-unicode-font (font-spec :family "Fira Sans" :size 14))
+      doom-unicode-font (font-spec :family "Apple Color Emoji" :size 14))
+
+(setq emojify-display-style 'unicode)
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
