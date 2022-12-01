@@ -11,3 +11,4 @@ export FLYCTL_INSTALL=~/.fly
 if uname -r | grep -q "WSL"; then
     export BROWSER=wslview
 fi
+. "$HOME/.cargo/env"

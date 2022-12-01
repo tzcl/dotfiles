@@ -12,7 +12,7 @@ source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
 
 # Aliases
 alias ls="exa"
-alias cat="batcat"
+alias cat="bat"
 alias fzf="fzf --preview 'batcat --color=always --style=numbers --line-range=:500 {}'"
 
 # Keybindings
@@ -45,3 +45,10 @@ source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export COLORTERM=truecolor
+
+keep_current_path() {
+  printf "\e]9;9;%s\e\\" "$(wslpath -w "$PWD")"
+}
+precmd_functions+=(keep_current_path)
