@@ -1,3 +1,4 @@
 [[language]]
 name = "go"
+auto-format = false
 formatter = { command = "goimports" }

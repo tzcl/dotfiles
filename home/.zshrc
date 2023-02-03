@@ -14,6 +14,7 @@ source ~/github.com/powerlevel10k/powerlevel10k.zsh-theme
 alias ls="exa"
 alias cat="bat"
 alias fzf="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
+alias jq="gojq"
 
 alias gc="git add . && git commit"
 alias gca="git add . && git commit --amend"
