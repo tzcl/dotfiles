@@ -5,10 +5,12 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-source ~/github.com/powerlevel10k/powerlevel10k.zsh-theme
+source ~/Source/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export GPG_TTY=$(tty)
 
 # Aliases
 alias ls="exa"
@@ -16,10 +18,12 @@ alias cat="bat"
 alias fzf="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
 alias jq="gojq"
 
-alias gc="git add . && git commit"
-alias gca="git add . && git commit --amend"
+alias gc="git add -A && git commit"
+alias gca="git add -A && git commit --amend"
 
 # Keybindings
+bindkey -v
+export KEYTIMEOUT=1
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
@@ -41,8 +45,25 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
-source ~/github.com/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/github.com/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# lf
+lfcd () {
+    tmp="$(mktemp)"
+    lf -last-dir-path="$tmp" "$@"
+    if [ -f "$tmp" ]; then
+        dir="$(cat "$tmp")"
+        rm -f "$tmp"
+        if [ -d "$dir" ]; then
+            if [ "$dir" != "$(pwd)" ]; then
+                cd "$dir"
+            fi
+        fi
+    fi
+}
+zle -N lfcd
+bindkey  -s '^o' 'lfcd\n'
+
+source ~/Source/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/Source/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

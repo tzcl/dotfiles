@@ -1,4 +1,4 @@
-theme = "monokai+"
+theme = "catppuccin_frappe"
 
 [editor]
 cursorline = true

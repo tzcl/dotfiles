@@ -1,7 +1,7 @@
 [user]
 	name = Toby Law
 	email = toby.law@anz.com
-	signingkey = 28D3B0FE053B8D25
+	signingKey = 33D9FA5C0E637C34
 [init]
 	defaultBranch = main
 [commit]
