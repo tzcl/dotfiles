@@ -1016,7 +1016,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open '/Applications/Warp.app'"
+                                        "shell_command": "open '/Applications/kitty.app'"
                                     }
                                 ],
                                 "type": "basic"
