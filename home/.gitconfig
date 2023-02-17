@@ -6,7 +6,18 @@
 	defaultBranch = main
 [commit]
 	gpgsign = true
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
 
+	unstage = "reset HEAD --"
+	last = "log -1 HEAD"
+	fl = "log --graph --decorate --oneline"
+	
+	clone-wt = "!zsh $HOME/worktrees.zsh"
+	vis = "!tig"
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
 [push]

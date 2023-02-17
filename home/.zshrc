@@ -10,8 +10,6 @@ source ~/Source/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export GPG_TTY=$(tty)
-
 # Aliases
 alias ls="exa"
 alias cat="bat"
@@ -20,6 +18,7 @@ alias jq="gojq"
 
 alias gc="git add -A && git commit"
 alias gca="git add -A && git commit --amend"
+alias l="lfcd"
 
 # Keybindings
 bindkey -v
