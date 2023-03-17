@@ -5,6 +5,7 @@ url=$1
 basename=${url##*/}
 name=${2:-${basename%.*}}
 
+echo "Cloning into dir ${name}"
 mkdir $name
 cd "$name"
 

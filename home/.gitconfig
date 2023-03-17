@@ -2,10 +2,13 @@
 	name = Toby Law
 	email = toby.law@anz.com
 	signingKey = 33D9FA5C0E637C34
+
 [init]
 	defaultBranch = main
+
 [commit]
 	gpgsign = true
+
 [alias]
 	co = checkout
 	br = branch
@@ -18,7 +21,26 @@
 	
 	clone-wt = "!zsh $HOME/worktrees.zsh"
 	vis = "!tig"
+
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
+
 [push]
 	autoSetupRemote = true
+
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+	side-by-side = true
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
