@@ -20,6 +20,8 @@ alias gc="git add -A && git commit"
 alias gca="git add -A && git commit --amend"
 alias l="lfcd"
 
+alias cs="cd ~/Source"
+
 # Keybindings
 bindkey -v
 export KEYTIMEOUT=1
