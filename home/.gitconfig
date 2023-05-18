@@ -45,3 +45,5 @@
 
 [diff]
     colorMoved = default
+[http]
+	sslCAInfo = /Users/lawt3/.ssh/anz_global_root_ca_v2.pem
