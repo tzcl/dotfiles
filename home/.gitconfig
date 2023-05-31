@@ -22,6 +22,8 @@
 	clone-wt = "!zsh $HOME/worktrees.zsh"
 	vis = "!tig"
 
+	wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
 
