@@ -73,3 +73,6 @@ if [ -f '/Users/lawt3/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/lawt3/goo
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/lawt3/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/lawt3/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Temporal CLI autocomplete
+source <(temporal completion zsh)
