@@ -1,0 +1,1 @@
+*/5 * * * * /Applications/Privileges.app/Contents/Resources/PrivilegesCLI --add 2>&1

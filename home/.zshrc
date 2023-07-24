@@ -27,6 +27,11 @@ bindkey -v
 export KEYTIMEOUT=1
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
+bindkey -v '^?' backward-delete-char
+
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd 'gv' edit-command-line
 
 # Complete lowercase to uppercase
 autoload -Uz compinit && compinit
