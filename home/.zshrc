@@ -5,7 +5,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-source ~/Source/powerlevel10k/powerlevel10k.zsh-theme
+source ~/src/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -20,7 +20,7 @@ alias gc="git add -A && git commit"
 alias gca="git add -A && git commit --amend"
 alias l="lfcd"
 
-alias cs="cd ~/Source"
+alias cs="cd ~/src"
 
 # Keybindings
 bindkey -v
@@ -68,16 +68,7 @@ lfcd () {
 zle -N lfcd
 bindkey  -s '^o' 'lfcd\n'
 
-source ~/Source/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/Source/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/lawt3/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/lawt3/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/lawt3/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/lawt3/google-cloud-sdk/completion.zsh.inc'; fi
-
-# Temporal CLI autocomplete
-source <(temporal completion zsh)
