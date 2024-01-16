@@ -1,13 +1,10 @@
 [user]
 	name = Toby Law
-	email = toby.law@anz.com
-	signingKey = 33D9FA5C0E637C34
+	email = toby.zhi-chao.law@rokt.com
+	signingkey = /Users/toby/.ssh/id_ed25519.pub
 
 [init]
 	defaultBranch = main
-
-[commit]
-	gpgsign = true
 
 [alias]
 	co = checkout
@@ -49,3 +46,5 @@
     colorMoved = default
 [http]
 	sslCAInfo = /Users/lawt3/.ssh/anz_global_root_ca_v2.pem
+[gpg]
+	format = ssh
