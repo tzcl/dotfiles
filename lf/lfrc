@@ -102,3 +102,4 @@ cmd zip ${{
 }}
 
 set cursorpreviewfmt ""
+set hidden

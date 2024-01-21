@@ -24,6 +24,9 @@ newline = "↩"
 render = true
 skip-levels = 1
 
+[editor.file-picker]
+hidden = false
+
 [keys.normal]
 H = ["select_mode", "goto_line_start"]
 L = ["select_mode", "goto_line_end"]

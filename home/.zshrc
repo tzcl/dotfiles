@@ -15,6 +15,8 @@ alias ls="exa"
 alias cat="bat"
 alias fzf="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
 alias jq="gojq"
+alias lg="lazygit"
+alias ld="lazydocker"
 
 alias gc="git add -A && git commit"
 alias gca="git add -A && git commit --amend"
@@ -22,11 +24,26 @@ alias l="lfcd"
 
 alias cs="cd ~/src"
 
+# Make copying shell commands easy
+alias $=""
+
+# AWS bindings
+alias rokt-stage="aws-vault exec rokt-stage -- "
+alias rokt-prod="aws-vault exec rokt-prod -- "
+
 # Keybindings
 export KEYTIMEOUT=1
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 bindkey '^?' backward-delete-char
+
+backward-kill-dir () {
+    local WORDCHARS=${WORDCHARS/\/}
+    zle backward-kill-word
+    zle -f kill
+}
+zle -N backward-kill-dir
+bindkey '^[^?' backward-kill-dir
 
 autoload -Uz edit-command-line
 zle -N edit-command-line
